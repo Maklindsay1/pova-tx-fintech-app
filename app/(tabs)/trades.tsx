@@ -13,14 +13,14 @@ export default function TradesScreen() {
     { id: '4', symbol: 'US30', type: 'SELL', lot: '0.50', entry: '37500', exit: '37420', pl: '+$40.00', status: 'History', bot: 'Synth Master' },
   ];
 
-  const displayTrades = activeTab === 'Active' ? activeTrades.map(t => ({
+  const displayTrades = activeTab === 'Active' ? (activeTrades || []).map(t => ({
     ...t,
     lot: '0.10',
     entry: '1.0854',
     current: '1.0892',
-    pl: (t.pl >= 0 ? '+' : '') + '$' + Math.abs(t.pl).toFixed(2),
+    pl: ((t?.pl || 0) >= 0 ? '+' : '') + '$' + Math.abs(t?.pl || 0).toFixed(2),
     status: 'Active',
-    bot: t.symbol === 'EURUSD' ? 'Alpha FX' : t.symbol === 'BTCUSD' ? 'Crypto Pulse' : 'Gold Rush'
+    bot: t?.symbol === 'EURUSD' ? 'Alpha FX' : t?.symbol === 'BTCUSD' ? 'Crypto Pulse' : 'Gold Rush'
   })) : HISTORY;
 
   return (
@@ -69,7 +69,7 @@ export default function TradesScreen() {
                 </View>
                 <Text style={styles.botText}>via {item.bot}</Text>
               </View>
-              <Text style={[styles.plText, { color: item.pl.startsWith('+') ? colors.success : colors.error }]}>{item.pl}</Text>
+              <Text style={[styles.plText, { color: item.pl?.startsWith('+') ? colors.success : colors.error }]}>{item.pl}</Text>
             </View>
 
             <View style={styles.detailsRow}>

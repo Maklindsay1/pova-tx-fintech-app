@@ -9,6 +9,7 @@ import { useTradingSimulation } from '@/hooks/useTradingSimulation';
 export default function DashboardScreen() {
   const [refreshing, setRefreshing] = React.useState(false);
   const { totalEquity } = useTradingSimulation();
+  const displayEquity = totalEquity || 0;
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -30,7 +31,6 @@ export default function DashboardScreen() {
           </View>
           <Button variant="ghost" size="sm" leftIcon={<Ionicons name="notifications-outline" size={24} color={colors.text} />} onPress={() => {}} />
         </View>
-
         <Card variant="elevated" style={styles.mainBalanceCard}>
           <View style={styles.balanceHeader}>
             <Text style={styles.balanceLabel}>Total Equity</Text>
@@ -38,7 +38,7 @@ export default function DashboardScreen() {
               <Text style={styles.profitText}>+12.5%</Text>
             </View>
           </View>
-          <Text style={styles.balanceAmount}>${totalEquity.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+          <Text style={styles.balanceAmount}>${displayEquity.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
           <View style={styles.balanceFooter}>
             <View style={styles.statItem}>
               <Text style={styles.statLabel}>Win Rate</Text>
