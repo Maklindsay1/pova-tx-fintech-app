@@ -52,8 +52,9 @@ import Animated, {
 import * as Haptics from 'expo-haptics';
 import { colors, spacing, typography, borderRadius, touchTargets, opacity } from '@/constants/design';
 
-// Safety fallback for touchTargets (should never be needed, but prevents crashes)
+// Safety fallbacks (should never be needed, but prevents crashes)
 const MIN_TOUCH_TARGET = touchTargets?.minimum ?? 44;
+const DISABLED_OPACITY = opacity?.disabled ?? 0.5;
 import { animationTimings } from '@/constants/animations';
 import type { ButtonProps } from './Button.types';
 

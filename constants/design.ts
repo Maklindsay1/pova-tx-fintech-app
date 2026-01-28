@@ -37,7 +37,12 @@ export const colors = {
   // Special
   white: '#FFFFFF',
   black: '#000000',
+  nanoBlack: '#0A0A0A', // Ultra-dark black for maximum readability
   transparent: 'transparent',
+  
+  // Additional text colors for readability
+  textDisabled: '#52525B',
+  textInverse: '#09090B', // Black text on light backgrounds
   
   // Charts (TradingView)
   chartUp: '#089981',
@@ -182,6 +187,15 @@ export const avatarSize = {
 export const touchTargets = {
   minimum: 44,
   comfortable: 56,
+};
+
+export const opacity = {
+  disabled: 0.5,
+  pressed: 0.8,
+  hover: 0.9,
+  transparent: 0,
+  semiTransparent: 0.5,
+  opaque: 1,
 };
 
 export const getThemedColor = (light: string, dark: string, isDark: boolean) => isDark ? dark : light;
