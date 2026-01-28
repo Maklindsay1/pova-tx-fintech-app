@@ -11,6 +11,11 @@ export const colors = {
   primaryLight: '#4285F4',
   primaryTint: '#E8F0FE',
   
+  // Secondary
+  secondary: '#27272A',
+  secondaryDark: '#18181B',
+  secondaryLight: '#3F3F46',
+  
   // Neutral (Dark Mode First)
   background: '#09090B', // Deep black
   backgroundSecondary: '#18181B', // Dark gray for surfaces
@@ -20,18 +25,25 @@ export const colors = {
   text: '#FAFAFA', // White
   textSecondary: '#A1A1AA', // Muted gray
   textTertiary: '#71717A',
+  textDisabled: '#52525B',
+  textInverse: '#09090B', // Black text on light backgrounds
   
   // Semantic
   success: '#10B981', // Emerald green
+  successLight: '#34D399',
   error: '#EF4444', // Red
+  errorLight: '#F87171',
   warning: '#F59E0B',
+  warningLight: '#FBBF24',
   info: '#3B82F6',
+  infoLight: '#60A5FA',
   
   // Accents
   accent: '#F59E0B', // Amber for highlights
   
   // Borders
   border: '#27272A',
+  borderLight: '#3F3F46',
   divider: '#1F1F23',
   
   // Special
@@ -39,10 +51,6 @@ export const colors = {
   black: '#000000',
   nanoBlack: '#0A0A0A', // Ultra-dark black for maximum readability
   transparent: 'transparent',
-  
-  // Additional text colors for readability
-  textDisabled: '#52525B',
-  textInverse: '#09090B', // Black text on light backgrounds
   
   // Charts (TradingView)
   chartUp: '#089981',
